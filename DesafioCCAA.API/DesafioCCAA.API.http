@@ -1,0 +1,6 @@
+@DesafioCCAA.API_HostAddress = http://localhost:5081
+
+GET {{DesafioCCAA.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

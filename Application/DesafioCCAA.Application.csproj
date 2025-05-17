@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Usuario\DTO\UsuarioEdicaoDTO.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Validators\ValidacaoUsuarioCadastroDTO" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Editora\" />
+    <Folder Include="Validators\Livro\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\DesafioCCAA.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
