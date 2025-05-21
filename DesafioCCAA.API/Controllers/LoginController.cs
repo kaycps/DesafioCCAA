@@ -14,7 +14,7 @@ namespace DesafioCCAA.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(AutenticacaoDTO dto)
+        public async Task<IActionResult> Login([FromBody]AutenticacaoDTO dto)
         {
             var token = await _autenticacaoAppService.Login(dto);
 

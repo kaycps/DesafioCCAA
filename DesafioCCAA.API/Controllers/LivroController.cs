@@ -49,6 +49,18 @@ namespace DesafioCCAA.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Buscar(Guid id)
+        {
+            var result = await _livroAppService.Buscar(id);
+
+            if (result == null)
+            {
+                return NotFound(new { mensagem = "Livro não encontrado." });
+            }
+            return Ok(result);
+        }
+
         [HttpGet("todos")]
         public async Task<IActionResult> Buscar([FromQuery] string? termo = null)
         {
@@ -87,6 +99,8 @@ namespace DesafioCCAA.API.Controllers
             }
             return Ok("Livro deletado com sucesso!");
         }
+
+        
 
         [HttpGet("relatorio/pdf")]
         public async Task<IActionResult> GerarRelatorioPdf()

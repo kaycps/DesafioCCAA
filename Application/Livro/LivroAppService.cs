@@ -50,6 +50,14 @@ namespace DesafioCCAA.Application.Livro
 
         }
 
+        public async Task<LivroViewModel> Buscar(Guid id)
+        {
+            var result =  await _livroSevice.Buscar(id);
+
+            return new LivroViewModel(result);
+
+        }
+
         public async Task<byte[]> GerarRelatorioLivros(Guid idUsuario)
         {
             var livros = await _livroSevice.BuscarAsync(idUsuario, "");

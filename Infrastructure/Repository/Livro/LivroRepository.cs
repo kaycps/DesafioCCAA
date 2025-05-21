@@ -25,7 +25,7 @@ namespace DesafioCCAA.Infrastructure.Repository.Livro
 
         public async Task<Domain.Entity.Livro> BucarPorIdAsync(Guid id)
         {
-            return await _context.Livros.FindAsync(id);
+            return await _context.Livros.Include(x=>x.Editora).FirstAsync(x=>x.Id == id);
         }
 
         public async Task<IEnumerable<Domain.Entity.Livro>> BuscarAsync(Guid idUsuario, string query)

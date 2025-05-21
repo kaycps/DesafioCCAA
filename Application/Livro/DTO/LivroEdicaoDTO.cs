@@ -9,7 +9,6 @@ namespace DesafioCCAA.Application.Livro.DTO
     public class LivroEdicaoDTO
     {
         public Guid Id { get; set; }
-        public string Nome { get; set; }
         public string Titulo { get; set; }
         public string ISBN { get; set; }
         public string Autor { get; set; }

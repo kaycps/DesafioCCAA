@@ -45,6 +45,12 @@ namespace DesafioCCAA.Domain.Sevices
             return result;
         }
 
+        public async Task<Livro> Buscar(Guid id)
+        {
+            return await _unityOfWork.LivroRepository.BucarPorIdAsync(id);
+            
+        }
+
         public async Task<IEnumerable<Livro>> BuscarAsync(Guid idUsuario, string termo)
         {
             return await _unityOfWork.LivroRepository.BuscarAsync(idUsuario, termo);

@@ -12,6 +12,8 @@ namespace DesafioCCAA.Domain.Interfaces
         Task<Livro> AddAsync(Livro livro);
         Task<IEnumerable<Livro>> BuscarAsync(Guid idUsuario, string termo);
         Task<Livro> UpdateAsync(Livro livro);
+        Task<Livro> Buscar(Guid id);
+
         Task<bool> DeleteAsync(Guid id);
     }
 }

@@ -8,6 +8,8 @@ namespace DesafioCCAA.Application.Livro
         Task<IEnumerable<LivroViewModel>> BuscarAsync(Guid idUsuario,string termo);
         Task<LivroViewModel> UpdateAsync(LivroEdicaoDTO livro);
         Task<bool> DeleteAsync(Guid id);
+        Task<LivroViewModel> Buscar(Guid id);
+
         Task<byte[]> GerarRelatorioLivros(Guid idUsuario);
     }
 }

@@ -15,8 +15,8 @@ namespace DesafioCCAA.Application.Livro.DTO
         public string Autor { get; set; }
         public string Sinopse { get; set; }
         public string FotoPath { get; set; }
-        public string Genero { get; set; }
-        public string Editora { get; set; }
+        public int Genero { get; set; }
+        public int Editora { get; set; }
         
 
         public LivroViewModel(Domain.Entity.Livro livro)
@@ -28,9 +28,9 @@ namespace DesafioCCAA.Application.Livro.DTO
             Sinopse = livro.Sinopse;
             FotoPath = livro.FotoPath;
 
-            Genero = Enum.GetName(typeof(EGenero), livro.IdGenero);
+            Genero = livro.IdGenero;
 
-            Editora = livro.Editora != null ? livro.Editora.Nome : "";
+            Editora = livro.IdEditora;
         }
     }
 }
